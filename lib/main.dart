@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:app_ft_katec/src/modules/index/index_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,9 +15,34 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       color: Colors.blue,
       theme: ThemeData(
+        inputDecorationTheme: InputDecorationTheme(
+          counterStyle: TextStyle(
+            color: Colors.black
+          )
+        ),
+        appBarTheme: const AppBarTheme(
+
+          backgroundColor: Colors.blue,
+          iconTheme: IconThemeData(
+            color: Colors.white,
+            size: 30
+          ),
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.bold
+          )
+        ),
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          selectedIconTheme: IconThemeData(
+            size: 30
+          ),
+          unselectedIconTheme: IconThemeData(
+            size: 30
+          ),
           type: BottomNavigationBarType.fixed,
           elevation: 0.0,
           selectedItemColor: Colors.blue,
@@ -28,7 +55,8 @@ class MyApp extends StatelessWidget {
           selectedLabelStyle: TextStyle(
             color: Colors.blue,
             fontSize: 11
-          )
+          ),
+
 
         )
       ),
