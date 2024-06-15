@@ -1,14 +1,13 @@
 import 'package:app_ft_katec/src/modules/home/grid_item.dart';
 import 'package:app_ft_katec/src/modules/home/news.dart';
 import 'package:app_ft_katec/src/modules/home/row_item.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'home_logic.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
+  HomePage({super.key});
 
   final logic = Get.put(HomeLogic());
 
@@ -16,7 +15,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-
           foregroundColor: Colors.white,
           backgroundColor: Colors.blue,
           title: Container(
@@ -31,7 +29,6 @@ class HomePage extends StatelessWidget {
             IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
             IconButton(onPressed: () {}, icon: const Icon(Icons.notifications))
           ],
-
         ),
         body: ListView(
           children: [
@@ -42,26 +39,25 @@ class HomePage extends StatelessWidget {
                 ClipRRect(
                     child: Image.asset(
                   "assets/images/banner.jpeg",
-                      fit: BoxFit.cover,
-
+                  fit: BoxFit.cover,
                 )),
                 const Positioned(
                     top: 190, left: 15, right: 15, child: RowItem())
               ],
             ),
-
             Padding(
-              padding:  EdgeInsets.only(top: MediaQuery.of(context).size.height*.2),
-              child: GridItem(),
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * .15),
+              child: const GridItem(),
             ),
-            const SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             const News(),
-            const SizedBox(height: 20,),
+            const SizedBox(
+              height: 20,
+            ),
           ],
         ));
   }
-
-
 }
-
-

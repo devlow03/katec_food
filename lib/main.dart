@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       color: Colors.blue,
       theme: ThemeData(
-        inputDecorationTheme: InputDecorationTheme(
+        inputDecorationTheme: const InputDecorationTheme(
           counterStyle: TextStyle(
             color: Colors.black
           )

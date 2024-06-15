@@ -1,13 +1,11 @@
 import 'package:app_ft_katec/src/modules/history/history_transaction.dart';
-import 'package:app_ft_katec/src/modules/history/search_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'history_logic.dart';
 
 class HistoryPage extends StatelessWidget {
-  HistoryPage({Key? key}) : super(key: key);
+  HistoryPage({super.key});
 
   final logic = Get.put(HistoryLogic());
 
@@ -27,9 +25,8 @@ class HistoryPage extends StatelessWidget {
         body: DefaultTabController(
             initialIndex: 0,
             length: tabs.length,
-            child: Column(
-                children: [
-                  Container(
+            child: Column(children: [
+              Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -41,7 +38,7 @@ class HistoryPage extends StatelessWidget {
                   indicatorWeight: 1,
                   indicatorSize: TabBarIndicatorSize.tab,
                   isScrollable: true,
-                  labelPadding: EdgeInsets.symmetric(horizontal: 20),
+                  labelPadding: const EdgeInsets.symmetric(horizontal: 20),
                   indicatorColor: Colors.blue,
                   unselectedLabelColor: Colors.grey,
                   unselectedLabelStyle:
@@ -57,22 +54,16 @@ class HistoryPage extends StatelessWidget {
                   }).toList(),
                 )),
               ),
-                  Expanded(
-                    child: TabBarView(
-                      children: tabs.map((e){
-                        return const HistoryTransaction();
-                      }).toList()
-                    ),
-                  )
-
-            ]
-          )
-        )
-    );
+              Expanded(
+                child: TabBarView(
+                    children: tabs.map((e) {
+                  return const HistoryTransaction();
+                }).toList()),
+              )
+            ])));
   }
 
   Widget search() {
-    TextEditingController searchController = TextEditingController();
     return Column(
       children: [
         Padding(

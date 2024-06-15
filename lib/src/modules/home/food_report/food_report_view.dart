@@ -10,7 +10,7 @@ class FoodReportPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List items = ["a", "b"];
+    
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -49,15 +49,19 @@ class FoodReportPage extends StatelessWidget {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text("Thực phẩm 1:", style: TextStyle(fontWeight: FontWeight.bold),),
-                  const SizedBox(height: 10,),
+                  const Text(
+                    "Thực phẩm 1:",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   Container(
                     height: 45,
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(color: Colors.black),
-                      borderRadius: BorderRadius.circular(8)
-                    ),
+                        color: Colors.white,
+                        border: Border.all(color: Colors.black),
+                        borderRadius: BorderRadius.circular(8)),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 5),
                       child: DropdownButton<String>(
@@ -68,14 +72,12 @@ class FoodReportPage extends StatelessWidget {
                           'Chọn nguyên liệu 1',
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.black),
-
                         ),
 
                         underline: const Center(),
 
                         onChanged: (val) {},
-                        items: <String>["a","b"]
-                            .map((String value) {
+                        items: <String>["a", "b"].map((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
                             child: Text(value),
@@ -91,39 +93,41 @@ class FoodReportPage extends StatelessWidget {
               height: 10,
             ),
           ),
-          const SizedBox(height: 30,),
+          const SizedBox(
+            height: 30,
+          ),
           const Text(
             "Phụ huynh báo thực phẩm bị dị ứng: ",
             style: TextStyle(
                 fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
           ),
-          const SizedBox(height: 10,),
+          const SizedBox(
+            height: 10,
+          ),
           const TextField(
             maxLines: 5,
             decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.black)
-              )
-            ),
+                border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black))),
           ),
-          const SizedBox(height: 30,),
+          const SizedBox(
+            height: 30,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xff0000FF),
-                  padding: EdgeInsets.symmetric(horizontal: 40),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5)
-                  )
-                ),
-                  onPressed: (){},
-                  child: Text("THỰC HIỆN",
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xff0000FF),
+                      padding: EdgeInsets.symmetric(horizontal: 40),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5))),
+                  onPressed: () {},
+                  child: Text(
+                    "THỰC HIỆN",
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white
-              ),)),
+                        fontWeight: FontWeight.bold, color: Colors.white),
+                  )),
             ],
           )
         ],

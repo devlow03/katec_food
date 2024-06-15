@@ -1,4 +1,8 @@
+import 'package:app_ft_katec/src/modules/home/menu/menu_view.dart';
+import 'package:app_ft_katec/src/modules/home/time_table/time_table_view.dart';
+import 'package:app_ft_katec/src/modules/home/tuition_payment/tuition_payment_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RowItem extends StatelessWidget {
   const RowItem({super.key});
@@ -14,17 +18,17 @@ class RowItem extends StatelessWidget {
       {
         "icon":Icons.wallet,
         "label":"Thanh toán học phí",
-        "page":Text("1")
+        "page":const TuitionPaymentPage()
       },
       {
         "icon":Icons.calendar_month,
         "label":"Thời khóa biểu",
-        "page":Text("1")
+        "page":const TimeTablePage()
       },
       {
         "icon":Icons.food_bank,
         "label":"Thực đơn",
-        "page":Text("1")
+        "page":const MenuPage()
       }
     ];
     return Container(
@@ -49,15 +53,21 @@ class RowItem extends StatelessWidget {
           return Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5),
-              child: Column(
-                children: [
-
-                  Icon(item['icon'],color: Colors.blue,size: 40,),
-                  Text(item['label'],style: TextStyle(fontSize: 11,fontWeight: FontWeight.w700),
-                  textAlign: TextAlign.center,
+              child: GestureDetector(
+                behavior: HitTestBehavior.translucent,
+                onTap: ()=>Get.to(item['page']),
+                child: AbsorbPointer(
+                  child: Column(
+                    children: [
+                  
+                      Icon(item['icon'],color: Colors.blue,size: 40,),
+                      Text(item['label'],style: TextStyle(fontSize: 11,fontWeight: FontWeight.w700),
+                      textAlign: TextAlign.center,
+                      ),
+                  
+                    ],
                   ),
-
-                ],
+                ),
               ),
             ),
           );
