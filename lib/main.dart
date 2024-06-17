@@ -1,10 +1,14 @@
 import 'dart:ui';
 
+import 'package:app_ft_katec/src/core/dio_config.dart';
+import 'package:app_ft_katec/src/modules/authentication/sign_in_view.dart';
 import 'package:app_ft_katec/src/modules/index/index_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() {
+   WidgetsFlutterBinding.ensureInitialized();
+  DioConfig().dependencies();
   runApp(const MyApp());
 }
 
@@ -62,7 +66,7 @@ class MyApp extends StatelessWidget {
       ),
 
       // color: Colors.blue,
-      home: IndexPage(),
+      home: SigInView(),
     );
   }
 }

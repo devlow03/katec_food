@@ -74,13 +74,13 @@ class ProfilePage extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      "Nguyễn văn A",
+                    Obx(()=>Text(
+                      "${logic.getInfoRp.value?.data.fullName}",
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w700,
                           fontSize: 16),
-                    ),
+                    ),),
                     Container(
                         clipBehavior: Clip.none,
                         // alignment: Alignment.start,
